@@ -136,7 +136,7 @@ That's exactly what the clear functions are for.
 
 | `pinRead(pin)`                                   | Reads digital input               |
 
-| `enableInt(pin, true/false)`                     | Enable Interrupts on Pin          |
+| `enableInt(pin, true/false)`                     | Enable/Disable Interrupts on Pin  |
 
 | `intOutputMode(HIGH/LOW, ODR true, MIRROR true)` | Level, open-drain, seperate A/B   |
 
