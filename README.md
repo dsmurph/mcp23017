@@ -142,18 +142,18 @@ That's exactly what the clear functions are for.
 
 | `intTriggerMode(RISING, FALLING, BOTH)`          | Rising, Falling, Both -Flags      |    
 
-| `getInterruptFlags(INTFA/B clear true)`          | Outputs Int events as bitmask (**)|
+| `getInterruptFlags(INTFA/B clear true)`(**)     | Outputs Int events as bitmask    |
 
-| `getInterruptPins(INTFA/B clear true)`           | Outputs Int events as pinnum (**) |
+| `getInterruptPins(INTFA/B clear true)`(**)       | Outputs Int events as pinnum      |
 
-| `getIntCapture(INTCAPA/B clear true)`            | Edge of the interrupt event (**)  |
+| `getIntCapture(INTCAPA/B clear true)`(**)        | Edge of the interrupt event       |
 
 | `clearIntCapture(pin)`                           | Reset the capture bit             |
 
 | `clearInterrupts()`                              | Reset Int configure and values    |
 
 |--------------------------------------------------|-----------------------------------|
-(**) optional reset -> default as false
+(**) optional clear -> default as false
 ```
 
 ---
