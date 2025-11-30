@@ -5,9 +5,7 @@ The MCP23017 expander is an excellent GPIO extension for the Raspberry Pi.
 
 It features 16 additional GPIOs that can be configured as output and input pins.
 
-This mcp23017 class simplifies working with the I2C interface, configuring the MCP,
-
-and switching the pins for your project.
+This mcp23017 class simplifies working with the I2C interface, configuring the MCP, and switching the pins for your project.
 
 The functions are kept simple and restore all the functionalities of the expander.
 
@@ -16,16 +14,23 @@ Perfect for students, hobbyists and projects where GPIO control is simply needed
 
 without having to delve deeper into the expander's registers.
 
+---
 
 ---
 
 ## ✨ Features
 
-✔️ Simple GPIO input/output  
-✔️ One-line pin configuration  
+✔️ Simple GPIO input/output 
+
+✔️ One-line pin configuration 
+
 ✔️ Interrupt support (RISING, FALLING, BOTH)
+
 ✔️ Interrupt read and capture pin level
+
 ✔️ Interrupt Pin Output Mode (Rising/Falling POL, Open-Drain, Separate A/B Output Pins)
+
+---
 
 ---
 
@@ -35,9 +40,7 @@ without having to delve deeper into the expander's registers.
  
 The basic functions are simple and clearly designed.
 
-Just three lines of code will get the MCP working for
-
-you and complete your project.
+Just three lines of code will get the MCP working for you and complete your project.
 
 
 1️⃣ Configure
@@ -47,16 +50,13 @@ you and complete your project.
 3️⃣ Read
 
 
+
 🥵 You want to make an LED sweat? 
 
 
-No problem! Use the `pinMode()` function and
+No problem! Use the `pinMode()` function and assign any MCP pin as the output.
 
-assign any MCP pin as the output.
-
-With `pinWrite()`, you can animate the LED by
-
-switching it between high and low.
+With `pinWrite()`, you can animate the LED by switching it between high and low.
 
 
 
@@ -73,8 +73,9 @@ And now what? Yes, `pinRead()` keeps you informed, button pressed or released.
 
 There are no limits to the output and further processing.
 
+---
 
-
+---
 
 ## 🤖 Interrupts 
 
@@ -95,8 +96,7 @@ The process is always the same:
 
 Nothing is lost.
 
-Whether you query the level live, view the bitmask, or use the capture function –
-the information remains stored until you explicitly delete it or confirm it by reading GPIO.
+Whether you query the level live, view the bitmask, or use the capture function – the information remains stored until you explicitly delete it or confirm it by reading GPIO.
 
 Capture is like a photo.
 
@@ -151,7 +151,8 @@ That's exactly what the clear functions are for.
 
 ## 🎁 Take a look at the examples.
 
-They will serve as inspiration and ideas for your project.
+Exemplares as inspiration and ideas for your project.
+
 
 📁 examples/
 ```
@@ -162,7 +163,9 @@ They will serve as inspiration and ideas for your project.
  ├── interrupt.cpp  // Interrupt on pins
 
 ```
- 
+
+---
+
 ---
 
 ## 📐The functions explained
