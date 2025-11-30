@@ -29,7 +29,7 @@ without having to delve deeper into the expander's registers.
 
 ---
 
-##❗Basic
+## ❗Basic
 
  📱 A fast way!
  
