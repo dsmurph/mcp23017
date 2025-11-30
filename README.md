@@ -182,6 +182,36 @@ Exemplares as inspiration and ideas for your project.
 ## 📐The functions explained
 
 ```cpp
+
+
+/* Set pin mode Output/Input
+*
+*  pinMode(PIN, OUTPUT/INPUT/INPUT_PULLUP)
+*
+*  Output       = You can use this setting for a high and low output signal
+*  Input        = For connections with defined high/low signal or external pullup/pulldown resistor
+*  Input_Pullup = An input pin set to pull-up can be queried for a low signal.
+*
+*/
+
+
+/* Set pin to HIGH/LOW signal 
+*
+*  pinWrite(PIN, HIGH/LOW)
+*
+*  High = Signal at the level of the operating voltage, most 3.3 or 5 volts.
+*  Low  = Signal indicating the absence of a voltage close to ~0 volts.
+*/
+
+
+/* Set pin to read a signal 
+*
+*  pinRead(PIN)
+*
+*  It reproduces the signal that is present at the pin.
+*/
+
+
 /* Set interrupt output pins
 *
 *  intOutputMode(HIGH/LOW, TRUE/FALSE, TRUE/FALSE)
