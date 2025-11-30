@@ -1,4 +1,4 @@
-## 🛸 MCP23017 I2C Expander
+## 🛸 MCP23017 C++ Library – Build Keypads, Sensors, Relays & Interrupt Systems
 
 
 The MCP23017 expander is an excellent GPIO extension for Raspberry Pi, Microcontroller and many other platforms with I2C interface.
