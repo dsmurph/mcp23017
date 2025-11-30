@@ -180,6 +180,7 @@ Exemplares as inspiration and ideas for your project.
 ---
 
 ## 📐The functions explained
+
 ```cpp
 /* Set interrupt output pins
 *
