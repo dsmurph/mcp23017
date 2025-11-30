@@ -214,34 +214,32 @@ Exemplares as inspiration and ideas for your project.
 
 /* Interrupt output as Pinnums
 *
-*  getInterruptPins() **
+*  getInterruptPins(clear ture/false) **
 *
 */
 
 
 /* Interrupt output as bitmask
 *
-*  getInterruptFlags() **
+*  getInterruptFlags(clear ture/false) **
 *  
 */
 
 
 /* Interrupt Capture reproduces the state of the pins during an interrupt.
 *
-*  getIntCapture() **
+*  getIntCapture(clear ture/false) **
 * 
 */
-
-// ** Optionally, the values can be reset after output with true, default is false. If you don't need this setting, you can leave it out.
 
 
 /* Interrupt flag as boolean
 *
-*  isInterruptOnPin(PIN)
-*  
-*  Optionally, the values can be reset after output, default is false. If you don't need this setting, you can leave it out.
+*  isInterruptOnPin(PIN, clear ture/false) **
 *
 */
+
+// ** Optionally clear, the values can be reset after output with true, default is false. If you don't need this setting, you can leave it out.
 
 
 /* Interrupt Capture reset a specific pin.
