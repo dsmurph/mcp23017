@@ -1,18 +1,16 @@
 ## 🛸 MCP23017 I2C Expander
 
 
-The MCP23017 expander is an excellent GPIO extension for the Raspberry Pi.
+The MCP23017 expander is an excellent GPIO extension for Raspberry Pi, Microcontroller and many other platforms with I2C interface.
 
 It features 16 additional GPIOs that can be configured as output and input pins.
 
-This mcp23017 class simplifies working with the I2C interface, configuring the MCP, and switching the pins for your project.
+This MCP23017 C++ API simplifies working with the I2C interface, configuring the MCP, and switching the pins for your project.
 
 The functions are kept simple and restore all the functionalities of the expander.
 
 
-Perfect for students, hobbyists and projects where GPIO control is simply needed –
-
-without having to delve deeper into the expander's registers.
+Perfect for students, hobbyists and projects where GPIO control is simply needed –without having to delve deeper into the expander's registers.
 
 ---
 
@@ -133,19 +131,32 @@ That's exactly what the clear functions are for.
 | Function                                         | Description                       |
 |--------------------------------------------------|-----------------------------------|
 | `pinMode(pin, Output/Input/Pullup)`              | Configures pin direction          |
+
 | `pinWrite(pin, HIGH/LOW)`                        | Sets pin output state             |
+
 | `pinRead(pin)`                                   | Reads digital input               |
+
 | `enableInt(pin, true/false)`                     | Enable Interrupts on Pin          |
+
 | `intOutputMode(HIGH/LOW, ODR true, MIRROR true)` | Level, open-drain, seperate A/B   |
+
 | `intTriggerMode(RISING, FALLING, BOTH)`          | Rising, Falling, Both -Flags      |    
+
 | `getInterruptFlags(INTFA/B clear true)`          | Outputs Int events as bitmask (**)|
+
 | `getInterruptPins(INTFA/B clear true)`           | Outputs Int events as pinnum (**) |
+
 | `getIntCapture(INTCAPA/B clear true)`            | Edge of the interrupt event (**)  |
+
 | `clearIntCapture(pin)`                           | Reset the capture bit             |
+
 | `clearInterrupts()`                              | Reset Int configure and values    |
+
 |--------------------------------------------------|-----------------------------------|
 (**) optional reset -> default as false
 ```
+
+---
 
 ---
 
@@ -169,7 +180,7 @@ Exemplares as inspiration and ideas for your project.
 ---
 
 ## 📐The functions explained
-```
+```cpp
 /* Set interrupt output pins
 *
 *  intOutputMode(HIGH/LOW, TRUE/FALSE, TRUE/FALSE)
