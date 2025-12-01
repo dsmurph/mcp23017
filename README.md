@@ -242,6 +242,8 @@ Exemplares as inspiration and ideas for your project.
 *
 *  enableInt(PIN, TRUE/FALSE)
 *
+*  Enable or disable a pin as an interrupt
+*
 */
 
 
@@ -249,26 +251,34 @@ Exemplares as inspiration and ideas for your project.
 *
 *  getInterruptPins(clear ture **)
 *
+*  Outputs of active interrupt pins as pin number
+*
 */
 
 
 /* Interrupt output as bitmask
 *
 *  getInterruptFlags(clear ture **)
-*  
+*
+*  Outputs of active interrupt pins as a bitmask
+*
 */
 
 
 /* Interrupt Capture reproduces the state of the pins during an interrupt.
 *
 *  getIntCapture(clear ture **)
-* 
+*
+*  Outputs the state of the interrupt pin at the time of an edge transition.
+*
 */
 
 
 /* Interrupt flag as boolean
 *
 *  isInterruptOnPin(PIN, clear ture **)
+*
+*  Outputs a Boolean value on a pin interrupt
 *
 */
 
@@ -292,9 +302,18 @@ Exemplares as inspiration and ideas for your project.
 *  
 */
 
-/* MCP configure. 
+/********** MCP configure **********
+
+*  enableSlewRateControl(true/false)
 *
-*  DISSLW  = True: Only in cases of long cable runs or EMI problems I2C SDA, default is false. If you don't need this setting, you can leave it out.
+*  DISSLW = True: Only in cases of long cable runs or EMI problems I2C SDA.
+
+
+*  setSequentialOperation(true/false) 
+*
+*  SEQOP = Useful when a register needs to be continuously queried (read) or changed (written).
+
+
 ```
 
 ---
