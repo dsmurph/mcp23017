@@ -127,35 +127,32 @@ That's exactly what the clear functions are for.
 
 ## 🧩 Provided Functions
 
-
 | Function                                              | Description                      |
 |-------------------------------------------------------|----------------------------------|
 | `pinMode(pin, OUTPUT, INPUT, INPUT_PULLUP)`           | Configures pin direction         |
-
+|                                                       |                                  |
 | `pinWrite(pin, HIGH/LOW)`                             | Sets pin output state            |
-
+|                                                       |                                  |
 | `pinRead(pin)`                                        | Reads digital input              |
-
+|                                                       |                                  |
 | `enableInt(pin, true/false)`                          | Enable/Disable Interrupts on Pin |
-
+|                                                       |                                  |
 | `intOutputMode(HIGH/LOW, ODR true, MIRROR true)` (**) | Level, open-drain, seperate A/B  |
-
+|                                                       |                                  |
 | `intTriggerMode(RISING, FALLING, BOTH)`               | Rising, Falling, Both -Flags     |    
-
+|                                                       |                                  |
 | `getInterruptFlags(INTFA/B clear true)`(**)           | Outputs Int events as bitmask    |
-
+|                                                       |                                  |
 | `getInterruptPins(INTFA/B clear true)`(**)            | Outputs Int events as pinnum     |
-
+|                                                       |                                  |
 | `getIntCapture(INTCAPA/B clear true)`(**)             | Edge of the interrupt event      |
-
+|                                                       |                                  |
 | `clearIntCapture(pin)`                                | Reset the capture bit            |
-
+|                                                       |                                  |
 | `clearInterrupts()`                                   | Reset Int configure and values   |
-
+|                                                       |                                  |
+|  (**) optional -> default as false                    |                                  |
 |-------------------------------------------------------|----------------------------------|
-(**) optional -> default as false
-
----
 
 ---
 
