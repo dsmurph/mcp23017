@@ -130,7 +130,7 @@ That's exactly what the clear functions are for.
 ```
 | Function                                              | Description                      |
 |-------------------------------------------------------|----------------------------------|
-| `pinMode(pin, Output/Input/Pullup)`                   | Configures pin direction         |
+| `pinMode(pin, OUTPUT, INPUT, INPUT_PULLUP)`           | Configures pin direction         |
 
 | `pinWrite(pin, HIGH/LOW)`                             | Sets pin output state            |
 
