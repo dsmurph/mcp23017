@@ -127,7 +127,7 @@ That's exactly what the clear functions are for.
 
 ## 🧩 Provided Functions
 
-```
+
 | Function                                              | Description                      |
 |-------------------------------------------------------|----------------------------------|
 | `pinMode(pin, OUTPUT, INPUT, INPUT_PULLUP)`           | Configures pin direction         |
@@ -154,7 +154,6 @@ That's exactly what the clear functions are for.
 
 |-------------------------------------------------------|----------------------------------|
 (**) optional -> default as false
-```
 
 ---
 
@@ -317,3 +316,26 @@ Exemplares as inspiration and ideas for your project.
 ```
 
 ---
+
+---
+
+
+## 📄 License
+
+MIT License  
+You are free to use, modify, and distribute this project.
+
+---
+
+---
+
+## 🤝 Contributions
+
+Pull requests and improvements are welcome.  
+Feel free to fork, enhance, or suggest features.
+
+---
+
+---
+
+⭐ If this lib helps your project — consider starring it on GitHub!
