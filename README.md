@@ -302,12 +302,12 @@ Exemplares as inspiration and ideas for your project.
 
 *  enableSlewRateControl(true/false)
 *
-*  DISSLW = True: Only in cases of long cable runs or EMI problems I2C SDA.
+*  DISSLW = true: Only in cases of long cable runs or EMI problems I2C SDA.
 
 
 *  setSequentialOperation(true/false) 
 *
-*  SEQOP = Useful when a register needs to be continuously queried (read) or changed (written).
+*  SEQOP = true: Useful when a register needs to be continuously queried (read) or changed (written).
 
 
 ```
