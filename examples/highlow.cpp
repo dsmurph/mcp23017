@@ -1,5 +1,5 @@
 /**
- * @file blink.cpp
+ * @file highlow.cpp
  * @class MCP23017.hpp
  * @brief Lightweight C++ API for Expander MCP23017 GPIO access.
  *
@@ -18,35 +18,25 @@
  */
 
 #include <iostream>
-#include <chrono>
-#include <thread>
 
-// Include class mcp2301
+// Include class mcp23017.
 #include "MCP23017.hpp"
 
 // Define a name
-const int ledPin = 0;
+const int highlowPin = 1;
 
-// Create an object.
+// Create an object
 MCP23017 mcp;
 
 int main() {
     try {
-        
-        // Pin as Output
-        mcp.pinMode(ledPin, OUTPUT);
-        
-        while (true) {
-          
-           // Set HIGH
-           mcp.pinWrite(ledPin, HIGH);
-           std::this_thread::sleep_for(std::chrono::milliseconds(250));
-         
-           // Set LOW
-           mcp.pinWrite(ledPin, LOW);
-           std::this_thread::sleep_for(std::chrono::milliseconds(250));
-        }
-        
+        // Set as Output 
+        mcp.pinMode(highlowPin, OUTPUT);
+        // Set high
+        mcp.pinWrite(highlowPin, HIGH);
+        // Set low 
+        mcp.pinWrite(highlowPin, LOW);
+           
     } catch (const std::exception &e) {
         std::cerr << e.what() << "\n";
     }

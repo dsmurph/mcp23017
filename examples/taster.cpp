@@ -1,5 +1,5 @@
 /**
- * @file blink.cpp
+ * @file taster.cpp
  * @class MCP23017.hpp
  * @brief Lightweight C++ API for Expander MCP23017 GPIO access.
  *
@@ -21,32 +21,36 @@
 #include <chrono>
 #include <thread>
 
-// Include class mcp2301
+// Include class mcp23017.
 #include "MCP23017.hpp"
 
 // Define a name
-const int ledPin = 0;
+const int inputPin = 8;
 
-// Create an object.
+// create an object
 MCP23017 mcp;
 
 int main() {
+
     try {
+        // Sets inputPin (Pin 8) as INPUT with internal PULLUP
+        mcp.pinMode(inputPin, INPUT_PULLUP);
         
-        // Pin as Output
-        mcp.pinMode(ledPin, OUTPUT);
-        
-        while (true) {
+         // pinValue helper
+        pinValue val = HIGH;
+        // The loop will continue to execute as long as the condition is true.
+        while (val == HIGH) {
           
-           // Set HIGH
-           mcp.pinWrite(ledPin, HIGH);
-           std::this_thread::sleep_for(std::chrono::milliseconds(250));
-         
-           // Set LOW
-           mcp.pinWrite(ledPin, LOW);
-           std::this_thread::sleep_for(std::chrono::milliseconds(250));
+           // Read the Pin and passes state
+           val = mcp.pinRead(inputPin);
+           
+           // Just a short break to relieve the system
+           std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
         
+        // Button pressed, pin goes low and exits the loop.
+        std::cout << "Button pressed!\n";
+           
     } catch (const std::exception &e) {
         std::cerr << e.what() << "\n";
     }
