@@ -31,10 +31,10 @@
 // Include class mcp23017.
 #include "MCP23017.hpp"
 
-// Give the number 0 a name.
+// Define a name.
 const int interruptPin_1 = 0;
 
-// Create an object named mcp, based on the class.
+// Create an object
 MCP23017 mcp;
 
 int main() {
@@ -66,7 +66,7 @@ int main() {
          // Interrupt pin disabled
          mcp.enableInt(interruptPin_1, false);
         
-         // --- Output as pinnum list ---
+         // --- Output pinnum list ---
          auto pins = mcp.getInterruptPins();
          for (auto& p : pins) {
              std::cout << "Pin: " << int(p) << "\n";
