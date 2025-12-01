@@ -214,13 +214,15 @@ Exemplares as inspiration and ideas for your project.
 
 /* Set interrupt output pins
 *
-*  intOutputMode(HIGH/LOW, TRUE/FALSE, TRUE/FALSE)
+*  intOutputMode(HIGH/LOW, ODR true **, MIRROR true **)
 *
 *  INTPOL  = The output pin can be set to either a falling or rising edge.
 *            HIGH: Interrupt pin goes HIGH on event
 *            LOW:  Interrupt pin goes LOW on event
 *  ODR     = True: For external pull-up, INTPOL is automatically set to default.
-*  MIRROR  = True: INTA and INTB Pins separately, default is false. If you don't need this setting, you can leave it out.
+*  MIRROR  = True: INTA and INTB Pins separately, default is false. 
+*
+*  ** If you don't need this setting, you can leave it out.
 *
 */
 
@@ -245,28 +247,28 @@ Exemplares as inspiration and ideas for your project.
 
 /* Interrupt output as Pinnums
 *
-*  getInterruptPins(clear ture/false) **
+*  getInterruptPins(clear ture **)
 *
 */
 
 
 /* Interrupt output as bitmask
 *
-*  getInterruptFlags(clear ture/false) **
+*  getInterruptFlags(clear ture **)
 *  
 */
 
 
 /* Interrupt Capture reproduces the state of the pins during an interrupt.
 *
-*  getIntCapture(clear ture/false) **
+*  getIntCapture(clear ture **)
 * 
 */
 
 
 /* Interrupt flag as boolean
 *
-*  isInterruptOnPin(PIN, clear ture/false) **
+*  isInterruptOnPin(PIN, clear ture **)
 *
 */
 
