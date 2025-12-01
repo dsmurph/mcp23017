@@ -27,13 +27,14 @@
 #include <linux/i2c-dev.h>
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 enum pin_Mode { INPUT = 1, OUTPUT = 0, INPUT_PULLUP = 3 };
 enum pin_Value { HIGH = 1, LOW = 0, ERROR = 255 };
 enum int_Mode { CHANGE = 2, RISING = 1, FALLING = 0 };
 
 struct IntEvent {
-    uint8_t pin;
+    uint16_t pin;
     bool level;
 };
 
@@ -119,7 +120,7 @@ public:
     }
     
 
-    pinValue pinRead(uint8_t pin) {
+    pin_Value pinRead(uint8_t pin) {
         if (!pinCheck(pin)) return ERROR;
 
         uint8_t reg = (pin < 8) ? GPIOA : GPIOB;
@@ -138,13 +139,13 @@ public:
         uint8_t regVal = readReg(regGPINTEN);
         
         if (enable) regVal |= (1 << bit);
-        else val &= ~(1 << bit);
+        else regVal &= ~(1 << bit);
         
         writeReg(regGPINTEN, regVal);      
     }
     
     
-    void intOutputMode(pin_Value w_INTPOL, bool w_ODR, bool w_MIRROR = false, bool w_DISSLW = false) {
+    void intOutputMode(pin_Value w_INTPOL, bool w_ODR = false, bool w_MIRROR = false) {
         uint8_t val = readReg(IOCON);
 
         if (w_ODR)  val |=  (1 << 2);
@@ -157,15 +158,12 @@ public:
 
         if (w_MIRROR) val |=  (1 << 6);
         else val &= ~(1 << 6);
-       
-        if (w_DISSLW) val |=  (1 << 4);
-        else          val &= ~(1 << 4);
 
         writeReg(IOCON, val);
     }
 
     
-    void intTriggerMode()(uint8_t pin, int_Mode mode) {
+    void intTriggerMode(uint8_t pin, int_Mode mode) {
         if (!pinCheck(pin)) return;
 
         uint8_t regDEFVAL  = (pin < 8) ? DEFVALA  : DEFVALB;
@@ -234,25 +232,23 @@ public:
         uint16_t captured = (uint16_t(capB) << 8) | capA;
 
         std::vector<IntEvent> events;
-        for (uint8_t pin = 0; pin < 16; pin++) {
-            if (flags & (1 << pin)) {                 // Wenn Interrupt auf diesem Pin
-                bool level = captured & (1 << pin);   // Wert aus INTCAP lesen
+        for (uint16_t pin = 0; pin < 16; pin++) {
+            if (flags & (1 << pin)) {
+                bool level = captured & (1 << pin);
                 events.push_back({ pin, level });
+                if (clear) clearIntCapture(pin);
             }
-        }
-
-        if (clear) {
-            writeReg(INTFA, 0x00);
-            writeReg(INTFB, 0x00);
         }
 
         return events;
     }
 
-    void clearIntCapture(uint_8 pin) {
+
+    void clearIntCapture(uint16_t pin) {
         if (pin < 8) (void)readReg(GPIOA);
         else (void)readReg(GPIOB);
     }
+
 
     void clearInterrupts() {
         (void)readReg(GPIOA);
@@ -260,6 +256,34 @@ public:
         writeReg(INTFA, 0x00);
         writeReg(INTFB, 0x00);
     }
+   
+
+    void enableSlewRateControl(bool enabled) {
+        uint8_t iocon = readReg(IOCON);
+    
+        if (enabled) {
+            iocon |= (1 << 4);
+        } else {
+            iocon &= ~(1 << 4);
+        }
+    
+        writeReg(IOCON, iocon);
+     }
+
+
+     void setSequentialOperation(bool enabled) {
+         uint8_t iocon = readReg(IOCON);
+
+         if (enabled) {
+             iocon &= ~(1 << 5);
+         } else {
+             iocon |= (1 << 5);
+         }
+    
+         writeReg(IOCON, iocon);
+      }
+
+
 
 private:
     int fd;
@@ -275,6 +299,7 @@ private:
     static constexpr uint8_t GPINTENA = 0x04;
     static constexpr uint8_t GPINTENB = 0x05;
 
+    static constexpr uint8_t IOCON   = 0x0A;
     static constexpr uint8_t DEFVALA = 0x06;
     static constexpr uint8_t DEFVALB = 0x07;
     static constexpr uint8_t INTFA   = 0x0E;
