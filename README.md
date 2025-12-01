@@ -152,7 +152,7 @@ That's exactly what the clear functions are for.
 | `clearInterrupts()`                                   | Reset Int configure and values   |
 |                                                       |                                  |
 |  (**) optional -> default as false                    |                                  |
-|-------------------------------------------------------|----------------------------------|
+
 
 ---
 
