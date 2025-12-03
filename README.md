@@ -14,8 +14,6 @@ Perfect for students, hobbyists and projects where GPIO control is simply needed
 
 ---
 
----
-
 ## ✨ Features
 
 ✔️ Simple GPIO input/output 
@@ -27,8 +25,6 @@ Perfect for students, hobbyists and projects where GPIO control is simply needed
 ✔️ Interrupt read and capture pin level
 
 ✔️ Interrupt Pin Output Mode (Rising/Falling POL, Open-Drain, Separate A/B Output Pins)
-
----
 
 ---
 
@@ -70,8 +66,6 @@ Extend the input pin with an internal pull-up resistor.
 And now what? Yes, `pinRead()` keeps you informed, button pressed or released.
 
 There are no limits to the output and further processing.
-
----
 
 ---
 
@@ -124,6 +118,7 @@ Once an event is triggered, it remains stored—until you say:
 
 That's exactly what the clear functions are for.
 
+---
 
 ## 🧩 Provided Functions
 
@@ -153,13 +148,11 @@ That's exactly what the clear functions are for.
 |                                                       |                                  |
 |  (**) optional -> default as false                    |                                  |
 
-
 ---
 
 ## 🎁 Take a look at the examples.
 
 Exemplares as inspiration and ideas for your project.
-
 
 📁 examples/
 ```
@@ -173,12 +166,9 @@ Exemplares as inspiration and ideas for your project.
 
 ---
 
----
-
 ## 📐The functions explained
 
 ```cpp
-
 
 /* Set pin mode Output/Input
 *
@@ -311,11 +301,7 @@ Exemplares as inspiration and ideas for your project.
 
 
 ```
-
 ---
-
----
-
 
 ## 📄 License
 
@@ -324,14 +310,10 @@ You are free to use, modify, and distribute this project.
 
 ---
 
----
-
 ## 🤝 Contributions
 
 Pull requests and improvements are welcome.  
 Feel free to fork, enhance, or suggest features.
-
----
 
 ---
 
