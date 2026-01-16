@@ -159,8 +159,8 @@ Exemplares as inspiration and ideas for your project.
  ├── blink.cpp      // Make individual LEDs blink
  ├── taster.cpp     // Query buttons
  ├── highlow.cpp    // Set Pin high/low
- └── keypad.cpp     // A keypad matrix example
  ├── interrupt.cpp  // Interrupt on pins
+ └── keypad.cpp     // A keypad matrix example
 
 ```
 
