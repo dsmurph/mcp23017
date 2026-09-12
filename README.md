@@ -1,3 +1,10 @@
+<div align="center">
+  <img src="https://kaiodo.de/images/mp.png" alt="mcp23017 Logo" width="300">
+</div>
+<br>
+  <div align="center"><a href="https://github.com/dsmurph/webpi/blob/main/resources/wwy.md"><img src="https://kaiodo.de/images/wwy.png" alt="we want you" width="10%" height="10%"></a></div>
+<br>
+
 ## 🛸 MCP23017 C++ Library – Build Keypads, Sensors, Relays & Interrupt Systems
 
 
