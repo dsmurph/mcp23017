@@ -15,7 +15,7 @@
  * @date 27.11.2025
  * @license MIT
  * @Copyright (c) 2025-2026 <dev@raspino.org>
- * This file is part of the Raspino-Project.
+ * This file is a part of the Raspino-Project.
  *
  * GitHub: https://github.com/dsmurph/mcp23017
  */
