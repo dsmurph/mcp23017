@@ -6,13 +6,16 @@
  * Supports basic operations such as Pin: mode, write, and read.
  * Supports expanded operations such as Interrupts: enable, output Mode, trigger Mode, get Flags and get Capture.
  *
- * @authors dsmurph & Lex
- * @version 1.0.0
- * @date 2025-11-27
- * @license MIT
- *
  * Requires:
  *  - MCP23017 I2C 16 Bit I/O Expander Modul
+ *
+ *
+ * @author Kay Donau
+ * @version 1.0.0
+ * @date 27.11.2025
+ * @license MIT
+ * @Copyright (c) 2025-2026 <dev@raspino.org>
+ * This file is part of the Raspino-Project.
  *
  * GitHub: https://github.com/dsmurph/mcp23017
  */
