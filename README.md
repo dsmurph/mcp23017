@@ -2,8 +2,7 @@
   <img src="/resources/mcp.png" alt="mcp23017 Logo" width="300" height="150">
 </div>
 <br>
-  <div align="center"><a href="https://github.com/dsmurph/webpi/blob/main/resources/wwy.md"><img src="/resources/wwy.png" alt="we want you" width="15%" height="15%"></a></div>
-<br>
+
 
 ## 🛸 MCP23017 C++ Library – Build Keypads, Sensors, Relays & Interrupt Systems
 
